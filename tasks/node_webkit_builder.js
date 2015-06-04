@@ -35,40 +35,40 @@ module.exports = function(grunt) {
           app_version: null,
           build_dir: null, // Path where
           force_download: false,
-          win: true,
-          mac: true,
+          win: false,
+          mac: false,
           linux32: false,
           linux64: false,
           mac_icns: false,
-          download_url: 'http://dl.node-webkit.org/',
+          download_url: 'http://dl.nwjs.io/',
           timestamped_builds: false,
           credits: false,
           keep_nw: false,
           zip: false  // Do not zip app.nw on OS X
       }),
       webkitFiles = [{
-        'url': "v%VERSION%/node-webkit-v%VERSION%-win-ia32.zip",
+        'url': "v%VERSION%/nwjs-v%VERSION%-win-ia32.zip",
         'type': 'win',
-        'files': ['ffmpegsumo.dll', 'icudt.dll', 'libEGL.dll', 'libGLESv2.dll', 'nw.exe', 'nw.pak'],
+        'files': ['ffmpegsumo.dll', 'icudtl.dat', 'libEGL.dll', 'libGLESv2.dll', 'nw.exe', 'nw.pak'],
         'nwpath': 'nw.exe',
         'app': '%APPNAME%.exe',
         'exclude': ['nwsnapshot.exe']
       }, {
-        'url': "v%VERSION%/node-webkit-v%VERSION%-osx-ia32.zip",
+        'url': "v%VERSION%/nwjs-v%VERSION%-osx-ia32.zip",
         'type': 'mac',
         'files': ['node-webkit.app'],
         'nwpath': '%APPNAME%.app/Contents/Resources',
         'app': 'app.nw', // We have to keep the name as "app.nw" on OS X!
         'exclude': ['nwsnapshot']
       }, {
-        'url': "v%VERSION%/node-webkit-v%VERSION%-linux-ia32.tar.gz",
+        'url': "v%VERSION%/nwjs-v%VERSION%-linux-ia32.tar.gz",
         'type': 'linux32',
         'files': ['nw', 'nw.pak', 'libffmpegsumo.so'],
         'nwpath': 'nw',
         'app': '%APPNAME%',
         'exclude': ['nwsnapshot']
       }, {
-        'url': "v%VERSION%/node-webkit-v%VERSION%-linux-x64.tar.gz",
+        'url': "v%VERSION%/nwjs-v%VERSION%-linux-x64.tar.gz",
         'type': 'linux64',
         'files': ['nw', 'nw.pak', 'libffmpegsumo.so'],
         'nwpath': 'nw',
