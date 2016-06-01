@@ -77,7 +77,7 @@ module.exports = function(grunt) {
         var releaseDone = Q.defer(),
             nwpath_rs,
             ws = fs.createWriteStream(relaseFile),
-            zipStream = fs.createReadStream(zipPath)
+            zipStream = fs.createReadStream(zipPath);
 
         ws.on('error', function(err) {
             grunt.fail.fatal(err);
@@ -102,11 +102,11 @@ module.exports = function(grunt) {
             });
 
             //if(type!="win"){
-                var packagefile = fs.createWriteStream(releaseFolder+"/package.nw")
+                var packagefile = fs.createWriteStream(releaseFolder+"/package.nw");
                 packagefile.on('error', function(err) {
                     grunt.fail.fatal(err);
                 });
-                zipStream.pipe(packagefile)
+                zipStream.pipe(packagefile);
             //}else{
             //  nwpath_rs.on('end', function(){
             //    zipStream.pipe(ws);

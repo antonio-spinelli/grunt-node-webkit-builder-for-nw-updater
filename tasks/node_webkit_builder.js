@@ -81,7 +81,7 @@ module.exports = function(grunt) {
     // And generate the release path and files
 
     // Check the target plattforms
-    if (!_.any(_.pick(options,"win","mac","linux32","linux64"))) {
+    if (!_.some(_.pick(options,"win","mac","linux32","linux64"))) {
       grunt.log.warn("No platforms to build!");
       return done();
     }
@@ -105,7 +105,7 @@ module.exports = function(grunt) {
 
       // We are building for one of these platforms
       // that requires a zip
-      _.any(_.pick(options, "win", "linux32", "linux64"))
+      _.some(_.pick(options, "win", "linux32", "linux64"))
     );
 
     // Generate the release path

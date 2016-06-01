@@ -29,8 +29,8 @@ ProgressIndicator.prototype.writeProgress = function () {
     var percent = 100;
     for (var id in this.entries) {
         if (this.entries.hasOwnProperty(id)) {
-            total += this.entries[id].total
-            downloaded += this.entries[id].downloaded
+            total += this.entries[id].total;
+            downloaded += this.entries[id].downloaded;
         }
     }
     if (total !== 0) {
